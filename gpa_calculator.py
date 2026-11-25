@@ -11,6 +11,14 @@ def calculate_gpa(courses):
 def show_result(gpa):
     print(f"Your GPA is: {gpa:.2f}")
 
+def get_remark(gpa, max_scale=4.0):
+    percent = gpa / max_scale
+    if percent >= 0.9:
+        return "Excellent"
+    elif percent >= 0.7:
+        return "Good"
+    return "Needs improvement"
+
 if __name__ == "__main__":
     courses = [("Maths", 4, "A"), ("Physics", 3, "B"), ("English", 2, "A")]
     show_result(calculate_gpa(courses))
